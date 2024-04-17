@@ -46,7 +46,8 @@ class ManufacturerListView(LoginRequiredMixin, generic.ListView):
 
         name = self.request.GET.get("name", "")
 
-        context["search_name_form"] = ManufacturerNameSearchForm(initial={"name": name})
+        context["search_name_form"] = ManufacturerNameSearchForm(
+            initial={"name": name})
         return context
 
     def get_queryset(self):
@@ -87,7 +88,8 @@ class CarListView(LoginRequiredMixin, generic.ListView):
 
         model = self.request.GET.get("model", "")
 
-        context["search_model_form"] = CarModelSearchForm(initial={"model": model})
+        context["search_model_form"] = CarModelSearchForm(
+            initial={"model": model})
         return context
 
     def get_queryset(self):
@@ -131,7 +133,8 @@ class DriverListView(LoginRequiredMixin, generic.ListView):
 
         username = self.request.GET.get("username", "")
 
-        context["search_form"] = DriverUsernameSearchForm(initial={"username": username})
+        context["search_form"] = DriverUsernameSearchForm(
+            initial={"username": username})
         return context
 
     def get_queryset(self):
